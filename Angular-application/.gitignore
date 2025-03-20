@@ -1,9 +1,6 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# compiled output
+# Compiled output
 /dist
 /tmp
 /out-tsc
@@ -14,7 +11,7 @@ __pycache__/
 npm-debug.log
 yarn-error.log
 
-# IDE's and editors
+# IDEs and editors
 .idea/
 .project
 .classpath
@@ -33,16 +30,13 @@ yarn-error.log
 
 # Miscellaneous
 /.angular/cache
-.saas-cache/
+.sass-cache/
 /connect.lock
 /coverage
-/libpeerconnections.log
+/libpeerconnection.log
 testem.log
 /typings
 
 # System files
 .DS_Store
 Thumbs.db
-
-package-lock.json
-environment.develpment.ts

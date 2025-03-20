@@ -1,0 +1,9 @@
+<h2>Restaurants</h2>
+
+<button (click)="fetchRestaurants()">Fetch Restaurants</button>
+
+<ul>
+  <li *ngFor="let restaurant of restaurants">
+    {{ restaurant.name }} - {{ restaurant.cuisine }} (Rating: {{ restaurant.rating }})
+  </li>
+</ul>
