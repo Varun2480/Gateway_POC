@@ -9,5 +9,11 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <!-- Inject the API_URL as a global JavaScript variable -->
+  <script>
+    window.__env = window.__env || {};
+    window.__env.API_URL = "{{API_URL}}";  // This will be replaced by Nginx with the actual value of API_URL
+  </script>
 </body>
 </html>

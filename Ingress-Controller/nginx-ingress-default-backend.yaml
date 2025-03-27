@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-nginx-default-backend
+  namespace: ingress-nginx
+  labels:
+    app: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ingress-nginx
+  template:
+    metadata:
+      labels:
+        app: ingress-nginx
+    spec:
+      containers:
+      - name: default-backend
+        # image: k8s.gcr.io/defaultbackend:1.5
+        image: tomoncledev/nginx-ingress-default-backend:latest
+        ports:
+        - containerPort: 80

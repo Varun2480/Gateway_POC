@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-app
+  template:
+    metadata:
+      labels:
+        app: angular-app
+    spec:
+      containers:
+        - name: angular-container
+          image: varuntej2480/frontend-svc:0.7 # Or your-dockerhub-username/angular-app:latest
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: angular-config

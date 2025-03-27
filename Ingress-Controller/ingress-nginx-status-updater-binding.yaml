@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ingress-nginx-status-updater-binding
+  namespace: default # Important! This must match the namespace of the Role
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: ingress-nginx # important, the ingress controller service account is in this namespace.
+roleRef:
+  kind: Role
+  name: ingress-nginx-status-updater
+  apiGroup: rbac.authorization.k8s.io
