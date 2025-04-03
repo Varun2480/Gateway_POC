@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: angular-config
 data:
-  API_URL: "http://localhost:30662"
+  API_URL: "http://api.local"

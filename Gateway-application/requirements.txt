@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+httpx
+pydantic
+fastapi-sessions
+python-keycloak
+PyJWT

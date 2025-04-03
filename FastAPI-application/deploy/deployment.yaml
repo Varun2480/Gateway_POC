@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: fastapi-container
-          image: varuntej2480/backend-svc:latest # or your-dockerhub-username/fastapi-app:latest
+          image: varuntej2480/backend-svc:0.1 # or your-dockerhub-username/fastapi-app:latest
           ports:
-            - containerPort: 8000
+            - containerPort: 8001

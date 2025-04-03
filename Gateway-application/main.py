@@ -22,6 +22,7 @@ KEYCLOAK_TOKEN_URL = f"{KEYCLOAK_SERVER_URL}/realms/{KEYCLOAK_REALM_NAME}/protoc
 KEYCLOAK_AUTHORIZE_URL = f"{KEYCLOAK_SERVER_URL}/realms/{KEYCLOAK_REALM_NAME}/protocol/openid-connect/auth"
 CALL_BACK_URL = os.getenv("CALL_BACK_URL", "http://localhost:8000/callback")
 KEYCLOAK_USERINFO_URL = f"{KEYCLOAK_SERVER_URL}/realms/{KEYCLOAK_REALM_NAME}/protocol/openid-connect/userinfo"
+FRONTEND_URL = "http://localhost:4200"
 
 # In-memory token storage (for demonstration purposes only)
 token_storage = {}
@@ -167,7 +168,8 @@ async def protected_route(request: Request):
     
     access_token = tokens["access_token"]
     user = get_current_user(access_token)
-    return {"message": f"Hello, {user}! This is a protected route."}
+    return RedirectResponse(url=FRONTEND_URL)
+    # return {"message": f"Hello, {user}! This is a protected route."}
     # return {"message": f"Hello, This is a protected route."}
 
 @app.exception_handler(HTTPException)
